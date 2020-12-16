@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url(' {{ url_for('static',filename='img/Admin-Background.jpg')}}  ')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Edit Post</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+
+
+           {% for post in posts %}
+<!--form-->
+ <div class="container">
+ <form name="Post" id="contactForm" action="/edit/{{post.sl_num}}" method="post" novalidate>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Title</label>
+              <input type="text" class="form-control" placeholder="Title of your blog" name="title" id="Title" required data-validation-required-message="Please enter your title." value="{{post.title}}">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+         <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Subheading</label>
+              <input type="text" class="form-control" placeholder="Subheading" name="subheading" id="Subheading" required data-validation-required-message="Please enter your subheading." value="{{post.subheading}}">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Content</label>
+                <input type="text" class="form-control" onresize="600" name="content" id="content" placeholder="Write your content." value="{{post.content}}">
+                <p></p><p></p><br>
+                <p class="help-block text-danger"></p>
+            </div>
+          </div>
+
+             <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label for="img">Image</label>
+                <input type="url" class="form-control" placeholder="Image(Enter link from internet)" name="img2" id="img" required data-validation-required-message="Please enter your feedback." value="{{post.img2}}">
+              <p class="help-block text-danger"><font class="imp"><strong>IMPORTANT:</strong></font>Don't forget to use .jpg, .jpeg or.png after the link</p>
+            </div>
+          </div>
+
+                <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+          <div id="success">
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">Submit</button>
+          </div></div></div>
+
+ </form>
+ </div>
+
+
+{% endfor %}
+{% endblock %}

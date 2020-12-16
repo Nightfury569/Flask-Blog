@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Random Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='clean-blog.min.css') }}" rel="stylesheet">
+     	<link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icons/favicon.ico') }}"/>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+
+
+
+
+
+   <style>
+     .tw_im{
+     position: absolute;
+     right: 80px;
+     left: 255px;
+     bottom: 50px;
+
+     }
+     .fb_im{
+     position: absolute;
+     left: 335px;
+     bottom: 50px;
+     }
+     .gh_im{
+     position: absolute;
+     left: 415px;
+     bottom: 50px;
+     }
+     .imp{
+     font-size: 20px;
+     }
+
+
+     .OP
+     {
+      font-size: 20px;
+      font-color: red;
+     }
+
+   /* Dropdown Button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+#messagebox{
+ resize: none;
+ width: 400px;
+ min-height: 100px
+ padding: 5px;
+ overflow: hidden;
+ box-sizing: border-box;
+}
+.im {
+  font-family: 'Helvetica';
+  font-weight: 300;
+  line-height: 2;
+  text-align: center;
+
+  width: 55%;
+  height: auto;
+  display: block;
+  position: relative;
+}
+
+.im:before {
+  content: <font color="red">"No image available"</font>;
+  font-color: red;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.im:after {
+  display: block;
+  font-size: 12px;
+}
+
+.sent {
+    color: #2060BD;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    display: none;
+    padding-left: 250px;
+}
+
+#pagebtn{
+position: relative;
+right:5px;
+}
+
+
+#dash{
+font-size:14px;
+
+}
+
+   </style>
+  </head>
+
+ <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+          <a class="navbar-brand" href="/"><font color="#ffccff">Random Blog</font></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/"><font color="#ffccff">Home</font></a>
+            </li>
+
+
+
+
+
+                                <li class="nav-item" >
+                                    <div id="dash" class="dropdown">
+              <a class="nav-link"><font color="#ffccff"><strong>Dashboard</strong></font></a>
+                           <div class="dropdown-content">
+           <a href="/dashboard/Navin">Navin</a>
+  <a href="/dashboard/Max">Max</a>
+          <a href="/dashboard/Michelle">Michelle</a>
+  <a href="/dashboard/Prantik">Prantik</a>
+
+                           </div></div></li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="/about.html"><font color="#ffccff">About</font></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/post.html"><font color="#ffccff">Sample Post</font></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/post.html/all/"><font color="#ffccff">Posts by Users</font></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/contact.html"><font color="#ffccff">Contact</font></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+{% block body %} {% endblock %}
+
+ <hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="{{params['tw_url']}}" target="_blank" >
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="{{params['fb_url']}}" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="{{params['gh_url']}}" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Copyright © Your Website 2018</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="{{ url_for('static', filename='clean-blog.min.js') }}"></script>
+
+<script>
+$( "#sendMessageButton" ).click(function() {
+  $( "div.sent" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+})
+
+</script>
+
+  </body>
+
+</html>
+

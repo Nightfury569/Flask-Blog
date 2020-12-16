@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url(' {{ url_for('static',filename='img/Admin-Background.jpg')}}  ')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Delete Page</h1>
+            <span class="subheading">Control and change your posts</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-preview">
+          <!-- post-->
+
+            <h2><font color="red"><strong>Your post has been deleted</strong></font></h2>
+            <br><br>
+            <h3><font color="red">!!!!Go Back to User Dashboard using navigation menu above!!!!</font></h3>
+
+
+      </div>
+    </div>
+  </div>
+  </div>
+
+{% endblock %}

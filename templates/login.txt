@@ -1,0 +1,41 @@
+@login_manager.user_loader
+def load_user(user_id):
+    return Login.query.get(int(user_id))
+
+
+
+
+
+@app.route('/',methods = ['GET','POST'])
+def login():
+    if 'user' in session and session['user']==params["username"]:
+        posts= Post.query.filter_by().all()
+        user = Login.query.filter_by(user_name=params["username"]).all()
+        login_user(user)
+        return render_template('admin.html',params=params,posts=posts)
+
+    if request.method=='POST':
+        user_name = request.form.get('user_name')
+        password = request.form.get('password')
+        if user_name == "Pain" and password == "Pch619" :
+            session['user']=user_name
+            posts = Post.query.filter_by(name=Login.name).all()
+            user = Login.query.filter_by(user_name=user_name).all()
+            login_user(user)
+            return render_template('admin.html', params=params, posts=posts)
+
+    else:
+        return render_template('Login.html',params=params)
+
+
+
+@app.route('/signup',methods = ['GET','POST'])
+def signup():
+    if request.method == 'POST':
+       user_name = request.form.get('user_name')
+       password = request.form.get('password')
+       name = request.form.get('name')
+       entry = Login(user_name=user_name,password=password,name=name)
+       db.session.add(entry)
+       db.session.commit()
+    return render_template('Sign_up.html',params=params)

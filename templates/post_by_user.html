@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <!-- Page Header -->
+{% for post in posts %}
+  <header class="container">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+              <br>
+              <br>
+              <h1><a href="/post.html/{{post.name}}/"><font color="#666699">{{post.title}}</font></a></h1>
+            <h2 class="subheading">{{post.subheading}}</h2>
+            <span class="meta"><em>Posted by
+              <a>{{post.name}}</a>
+              on {{post.date}}</em></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>{{post.content[0:20]}}.....</p>
+        </div>
+      </div>
+    </div>
+
+  </article>
+
+{% endfor %}
+
+
+
+<!--form-->
+<div class="container">
+ <form name="Post" id="contactForm" action="/post.html/all/" method="post" novalidate>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Name</label>
+              <input type="text" class="form-control" placeholder="Your Name" name="name" id="name" required data-validation-required-message="Please enter your name.">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Title</label>
+              <input type="text" class="form-control" placeholder="Title of your blog" name="title" id="Title" required data-validation-required-message="Please enter your feedback.">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+         <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Subheading</label>
+              <input type="text" class="form-control" placeholder="Subheading" name="subheading" id="Subheading" required data-validation-required-message="Please enter your feedback.">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Content</label>
+                <textarea class="form-control" onresize="600" name="content" id="content" placeholder="Write your content"></textarea>
+                <p></p>
+                <p class="help-block text-danger"></p>
+            </div>
+          </div>
+
+             <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label for="img">Image</label>
+                <input type="url" class="form-control" placeholder="Image(Enter link from internet)" name="img2" id="img" required data-validation-required-message="Please enter your feedback.">
+              <p class="help-block text-danger"><font class="imp"><strong>IMPORTANT:</strong></font>Don't forget to use .jpg, .jpeg or.png after the link</p>
+            </div>
+          </div>
+      <!--button-->
+           <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+          <div id="success">
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">Post</button>
+          </div></div></div>
+          </form>
+    <br>
+    <br>
+<!-- page button -->
+<div class="container">
+    <div class="control-group">
+        <p><font class="OP"><strong>Other Pages</strong></font></p>
+  <div class="dropdown">
+  <button class="dropbtn" id="pagebtn">Select Page</button>
+      <div class="dropdown-content">
+  <a href="/post.html/all/1/">1st page</a>
+  <a href="/post.html/all/2/">2nd page</a>
+  <a href="/post.html/all/3/">3rd page</a>
+  <a href="/post.html/all/">All</a>
+  </div>
+           </div>
+           </div>
+</div>
+
+    <br>
+    <!--name button-->
+
+    <div class="control-group">
+        <p><font class="OP"><strong>Other Posts</strong></font></p>
+  <div class="dropdown">
+  <button class="dropbtn">Select Name</button>
+      <div class="dropdown-content">
+
+           <a href="/post.html/Navin/">Navin</a>
+  <a href="/post.html/Max/">Max</a>
+          <a href="/post.html/Michelle/">Michelle</a>
+  <a href="/post.html/Prantik/">Prantik</a>
+
+  </div>
+           </div>
+           </div>
+
+
+            </div>
+
+
+
+{% endblock %}

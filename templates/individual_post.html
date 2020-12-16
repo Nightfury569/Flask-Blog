@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <!-- Page Header -->
+{% for post in posts %}
+<br>
+<br>
+  <header class="container">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1><font color="#666699">{{post.title}}</font></h1>
+            <h2 class="subheading">{{post.subheading}}</h2>
+            <span class="meta"><em>Posted by
+              {{post.name}}
+              on {{post.date}}</em></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>{{post.content}}</p>
+        </div>
+      </div>
+    </div>
+            <div class="container">
+          <div>
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <img class="im" src="{{post.img2}}">
+      </div>
+          </div>
+      </div>
+    {% endfor %}
+    <div class="container">
+      <button class="btn btn-primary" id="sendMessageButton"><a href="/post.html/all/">Back</a></button></div>
+  </article>
+
+
+
+    <br>
+    <br>
+
+<br>
+<!-- page button -->
+<div class="container">
+    <div class="control-group">
+        <p><font class="OP"><strong>Other Pages</strong></font></p>
+  <div class="dropdown">
+  <button class="dropbtn">Select Page</button>
+      <div class="dropdown-content">
+  <a href="/post.html/all/1/">1st page</a>
+  <a href="/post.html/all/2/">2nd page</a>
+  <a href="/post.html/all/3/">3rd page</a>
+  <a href="/post.html/all/">All</a>
+  </div>
+           </div>
+           </div>
+</div>
+
+<br>
+    <!--drop down-->
+    <div class="container">
+           <div class="control-group">
+               <p><font class="OP"><strong>Other Posts</strong></font></p>
+  <div class="dropdown">
+  <button class="dropbtn">Select Name</button>
+      <div class="dropdown-content">
+           <a href="/post.htmlNavin/">Navin</a>
+  <a href="/post.html/Max/">Max</a>
+          <a href="/post.html/Michelle/">Michelle</a>
+  <a href="/post.html/Prantik/">Prantik</a>
+  </div>
+           </div>
+           </div></div>
+
+{% endblock %}

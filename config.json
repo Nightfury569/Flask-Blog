@@ -1,0 +1,21 @@
+{
+  "params": {
+    "local_server": "True",
+    "local_uri": "mysql://root:@localhost/connection",
+    "local_2_uri": "mysql://root:@localhost/comments",
+    "prod_uri": "mysql://root:Pch05/03/2001@localhost/connection",
+    "fb_url": "https://www.facebook.com/prantik.chongdar.3",
+    "tw_url": "https://twitter.com/1st_connection",
+    "gh_url": "https://github.com/1st_connection",
+    "blog_name": "Life",
+    "sub_heading": "A Blog Theme about life lessons",
+    "gmail_username":"paintoworld789@gmail.com",
+    "gmail_password":"Pch05@619",
+    "feedback_label": "Feedback on video",
+    "feedback_placeholder":"Your Feedback on Video",
+    "feedback_your_name": "Your Name",
+    "num_of_posts": 2,
+    "username": "Pain",
+    "password": "Pch619"
+  }
+}
